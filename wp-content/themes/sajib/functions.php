@@ -47,6 +47,32 @@ function mh_customizar_register($wp_customize){
     'section' => 'mh_header_area',
   ) ));
 
+
+  // menu position
+
+  $wp_customize->add_section('mh_menu_option', array(
+     'title' => __('Menu Position', 'mhsajib'),
+     'description'=> 'If you interested to change your menu position you can do it.'
+  ));
+
+  $wp_customize->add_setting('mh_menu_position', array(
+    'default' => 'right_menu',
+  ));
+
+  $wp_customize->add_control('mh_menu_position', array(
+  'label' => 'Menu Position',
+  'description' => 'Select your menu position',
+  'setting' => 'mh_menu_position',
+  'section' => 'mh_menu_option',
+  'type' => 'radio',
+  'choices' => array(
+    'left_menu' => 'Left Menu',
+    'right_menu' => 'Right Menu',
+    'center_menu' => 'Center Menu'
+    
+  )
+  ));
+
 }
 
 add_action('customize_register', 'mh_customizar_register');
