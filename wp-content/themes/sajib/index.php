@@ -10,18 +10,27 @@
   <?php wp_head(  ); ?>
 </head>
 <body <?php body_class(  ); ?>>
-  <div id="header_area"  class="<?php echo get_theme_mod('mh_menu_position'); ?>">
+  <header id="header_area"  class="<?php echo get_theme_mod('mh_menu_position'); ?>">
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-        <a href=""><img src="<?php echo get_theme_mod('mh_logo'); ?>" alt=""></a>
+        <a href="<?php echo home_url( ) ?>"><img src="<?php echo get_theme_mod('mh_logo'); ?>" alt=""></a>
         </div>
         <div class="col-md-9">
           <?php wp_nav_menu( array('theme_location' => 'main_menu', 'menu_id' => 'nav') ); ?>
         </div>
       </div>
     </div>
-  </div>
+  </header>
+  <section id="body_area">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <?php the_content(); ?>
+        </div>
+      </div>
+    </div>
+  </section>
   
 
 <?php wp_footer(  ); ?>
