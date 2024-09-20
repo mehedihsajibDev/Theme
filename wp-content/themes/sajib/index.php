@@ -1,38 +1,52 @@
 <?php
 
- 
+get_header();
+
 ?>
-<!DOCTYPE html>
-<html lang="<?php language_attributes( );  ?>">
-<head>
-    <meta charset="<?php bloginfo( 'charset' ) ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <?php wp_head(  ); ?>
-</head>
-<body <?php body_class(  ); ?>>
-  <header id="header_area"  class="<?php echo get_theme_mod('mh_menu_position'); ?>">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-        <a href="<?php echo home_url( ) ?>"><img src="<?php echo get_theme_mod('mh_logo'); ?>" alt=""></a>
-        </div>
-        <div class="col-md-9">
-          <?php wp_nav_menu( array('theme_location' => 'main_menu', 'menu_id' => 'nav') ); ?>
-        </div>
-      </div>
-    </div>
-  </header>
   <section id="body_area">
     <div class="container">
       <div class="row">
-        <div class="col-12">
-          <?php the_content(); ?>
+       <div class="col-md-9">
+        <?php 
+        if(have_posts()):
+          while(have_posts()):the_post()
+        ?>
+        <div class="blog-area">
+          <div class="post_thumb">
+          <a href="<?php the_permalink(); ?>"><?php echo the_post_thumbnail('post-thumbnails'); ?></a>
+          </div>
+          <div class="post_details">
+          <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+          <?php the_excerpt(); ?>
+          </div>
         </div>
+         <?php
+         endwhile;
+         else :
+          _e("POst is not found");
+         endif;
+         ?>
+         <div id="page_nav">
+            <?php if ('mh_pagenav') {             
+              mh_pagenav(); 
+              } 
+              else{ 
+            ?>
+            <?php next_posts_link(); ?>
+            <?php previous_posts_link(); ?>
+            <?php 
+            } 
+            ?>
+          </div>
+       </div>
+       <div class="col-md-3">
+        This is sidebar
+       </div> 
       </div>
     </div>
   </section>
-  
+<?php 
 
-<?php wp_footer(  ); ?>
-</body>
-</html>
+get_footer();
+
+?>
