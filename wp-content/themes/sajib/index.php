@@ -23,7 +23,7 @@ get_header();
          <?php
          endwhile;
          else :
-          _e("POst is not found");
+          _e("Post is not found");
          endif;
          ?>
          <div id="page_nav">
@@ -40,7 +40,7 @@ get_header();
           </div>
        </div>
        <div class="col-md-3">
-        This is sidebar
+       <?php get_sidebar(); ?>
        </div> 
       </div>
     </div>
