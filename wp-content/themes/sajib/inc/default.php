@@ -4,17 +4,17 @@ add_theme_support('title-tag');
 add_theme_support( 'post-thumbnails', array('page', 'post') );
 add_image_size('post-thumbnails', 467, 500, true);
 
-// function mh_excerpt_more($more) {
-//     global $post;
-//     return '<br> <br> <a class="redmore" href="'.get_permalink( $post->ID) . '">' . 'Read More' . '</a>';
-// }
-// add_filter('excerpt_more', 'mh_excerpt_more');
+function mh_excerpt_more($more) {
+    global $post;
+    return '<br> <br> <a class="redmore" href="'.get_permalink( $post->ID) . '">' . 'Read More' . '</a>';
+}
+add_filter('excerpt_more', 'mh_excerpt_more');
 
   
-//   function mh_excerpt_lenght($length){
-//     return 10;
-//   }
-//   add_filter('excerpt_length', 'mh_excerpt_lenght', 999);
+  function mh_excerpt_lenght($length){
+    return 10;
+  }
+  add_filter('excerpt_length', 'mh_excerpt_lenght', 999);
 // Pagenav Function
 
 
