@@ -1,7 +1,8 @@
 <?php 
 add_theme_support('title-tag');
 // Thumbnil Image Area
-add_theme_support( 'post-thumbnails', array('page', 'post') );
+add_theme_support( 'post-thumbnails', array('page', 'post','service') );
+add_image_size('service', 390, 250, true);
 add_image_size('post-thumbnails', 467, 500, true);
 
 function mh_excerpt_more($more) {

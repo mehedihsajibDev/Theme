@@ -63,8 +63,45 @@ function mh_customizar_register($wp_customize){
     'section' => 'mh_footer_option',
   ));
   
+
+  // color settings
+
+  $wp_customize-> add_section('mh_colors', array(
+    'title' => __('Theme Color', 'mhsajib'),
+    'description' => 'If need you can change your theme color.',
+  ));
+
+  $wp_customize ->add_setting('mh_bg_color', array(
+    'default' => '#ffffff',
+  ));
+
+  $wp_customize->add_control( new WP_Customize_color_control($wp_customize, 'mh_bg_color', array(
+    'label' => 'Background Color',
+    'section' => 'mh_colors',
+    'settings' => 'mh_bg_color',
+  )));
+
+
+  $wp_customize ->add_setting('mh_primary_color', array(
+    'default' => '#ea1a70',
+  ));
+  $wp_customize->add_control( new WP_Customize_color_control($wp_customize, 'mh_primary_color', array(
+    'label' => 'Primary Color',
+    'section' => 'mh_colors',
+    'settings' => 'mh_primary_color',
+  )));
+
   
   }
   
   add_action('customize_register', 'mh_customizar_register');
-  
+
+  function mh_theme_color_cus(){
+  ?>
+  <style>
+    body{background: <?php echo get_theme_mod('mh_bg_color'); ?>}
+    :root{ --pink:<?php echo get_theme_mod('mh_primary_color'); ?>}
+  </style>
+  <?php 
+}
+add_action('wp_head', 'mh_theme_color_cus');

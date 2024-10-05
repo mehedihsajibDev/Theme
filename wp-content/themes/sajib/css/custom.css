@@ -1,6 +1,9 @@
 /*=======================================
  Common CSS
 ========================================*/
+:root {
+  --pink: #ea1a70;
+}
 body {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
@@ -22,10 +25,11 @@ h6 {
 }
 img {
   max-width: 100%;
+  height: auto;
 }
 a.redmore,
 input[type="submit"].submit {
-  background: #ea1a70;
+  background: var(--pink);
   border: 0px;
   color: #fff;
   font-size: 15px;
@@ -37,6 +41,14 @@ input[type="submit"].submit {
 a.redmore:hover,
 input[type="submit"].submit:hover {
   background: #262626;
+}
+.button{
+  background: var(--pink);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 5px;
+  display: inline-block;
+  text-decoration: none;
 }
 /*=======================================
  Header Area Style
@@ -71,7 +83,7 @@ input[type="submit"].submit:hover {
   text-decoration: none;
 }
 #header_area .col-md-9 ul li a:hover {
-  background: #ea1a70;
+  background: var(--pink);
   color: #fff;
 }
 
@@ -101,7 +113,7 @@ input[type="submit"].submit:hover {
   color: #262626;
 }
 #header_area .col-md-9 ul li:hover a {
-  background: #ea1a70;
+  background: var(--pink);
   color: #fff;
 }
 #header_area .col-md-9 ul li:hover ul li a {
@@ -122,7 +134,7 @@ input[type="submit"].submit:hover {
   left: 200px;
 }
 #header_area .col-md-9 ul li ul li:hover a {
-  background: #ea1a70;
+  background: var(--pink);
   color: #fff;
 }
 #header_area .col-md-9 ul ul li:hover ul li a {
@@ -130,7 +142,7 @@ input[type="submit"].submit:hover {
   color: #fff;
 }
 #header_area .col-md-9 ul ul li ul li a:hover {
-  background: #ea1a70;
+  background: var(--pink);
   color: #fff;
 }
 
@@ -209,7 +221,7 @@ input[type="submit"].submit:hover {
   transition: 0.5s;
 }
 #body_area .post_details h2 a:hover {
-  color: #ea1a70;
+  color: var(--pink);
 }
 
 /*===========================================
@@ -217,7 +229,7 @@ input[type="submit"].submit:hover {
 ===========================================*/
 #archive_title,
 #search_title {
-  background: #ea1a70;
+  background: var(--pink);
   padding: 15px;
   margin-bottom: 20px;
 }
@@ -242,11 +254,11 @@ input[type="submit"].submit:hover {
   text-transform: uppercase;
 }
 .error_page p {
-  color: #ea1a70;
+  color: var(--pink);
   margin-bottom: 0;
 }
 .error_page a.homepage {
-  background: #ea1a70;
+  background: var(--pink);
   color: #fff;
   margin-bottom: 0;
   text-decoration: none;
@@ -269,8 +281,8 @@ input[type="submit"].submit:hover {
   padding: 10px;
 }
 .error_search input[type="submit"] {
-  background: #ea1a70;
-  border: 1px solid #ea1a70;
+  background: var(--pink);
+  border: 1px solid var(--pink);
   padding: 10px;
   margin: 0;
   color: #fff;
@@ -292,7 +304,7 @@ input[type="submit"].submit:hover {
   font-size: 30px;
   margin-bottom: 0;
   line-height: 1em;
-  border-left: 5px solid #ea1a70;
+  border-left: 5px solid var(--pink);
   padding-left: 10px;
 }
 .child_sidebar input[type="search"] {
@@ -301,8 +313,8 @@ input[type="submit"].submit:hover {
   padding: 10px;
 }
 .child_sidebar button[type="submit"] {
-  background: #ea1a70;
-  border: 1px solid #ea1a70;
+  background: var(--pink);
+  border: 1px solid var(--pink);
   padding: 10px;
   margin: 0;
   color: #fff;
@@ -331,7 +343,7 @@ input[type="submit"].submit:hover {
   text-decoration: none;
 }
 .child_sidebar ul li a:hover {
-  color: #ea1a70;
+  color: var(--pink);
 }
 .child_sidebar a.tag-cloud-link {
   color: #fff;
@@ -343,7 +355,7 @@ input[type="submit"].submit:hover {
   margin-bottom: 5px;
 }
 .child_sidebar a.tag-cloud-link:hover {
-  background: #ea1a70;
+  background: var(--pink);
 }
 
 /*===========================================
@@ -352,7 +364,7 @@ input[type="submit"].submit:hover {
 #page_nav {
 }
 #page_nav p.pages {
-  background: #ea1a70;
+  background: var(--pink);
   color: #fff;
   padding: 5px 10px;
 }
@@ -361,7 +373,7 @@ input[type="submit"].submit:hover {
   padding: 0 5px;
 }
 #page_nav .page-numbers {
-  background: #ea1a70;
+  background: var(--pink);
   color: #fff;
   display: inline-block;
   text-decoration: none;
@@ -401,7 +413,7 @@ input[type="submit"].submit:hover {
   font-size: 15px;
 }
 #copyright_area p a {
-  color: #ea1a70;
+  color: var(--pink);
 }
 #copyright_area p a:hover {
   text-decoration: underline;
@@ -554,4 +566,19 @@ input[type="submit"].submit:hover {
 }
 .comment-form .comment-form-cookies-consent label {
   display: inline;
+}
+
+/*Theme Service area styling*/
+#service_area {
+  padding: 45px 0;
+}
+#service_area .child_service {
+  background: #ddd;
+  box-shadow: 0 0 10px #ddd;
+  padding: 15px;
+  border-radius: 15px;
+}
+#service_area .child_service img {
+  width: 100%;
+  margin: 0 0 15px;
 }
