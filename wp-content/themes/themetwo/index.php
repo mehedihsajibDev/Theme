@@ -18,14 +18,7 @@
             <a href=""> <img src="<?php echo get_theme_mod('mh_logo');?>"  alt="logo" class="logos"></a>
          </div>
          <div class="col-md-9">
-            <ul id="nav">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Section</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
-            </ul>
+            <?php wp_nav_menu( array('theme_location'=>'main_menu', 'menu_id'=>'nav') ); ?>
          </div>
         </div>
     </div>
