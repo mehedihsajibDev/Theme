@@ -53,6 +53,10 @@ input[type="submit"].submit:hover {
 /*=======================================
  Header Area Style
 ========================================*/
+.logos{
+  width: 220px;
+  border-radius: 5px;
+}
 #header_area {
   padding: 15px 0 20px;
   box-shadow: 0 3px 10px #ddd;
