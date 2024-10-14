@@ -12,7 +12,7 @@
     <?php wp_head( ); ?>
 </head>
 <body  <?php body_class(); ?>>
-  <div class="container-fluid px-5" id="header_area">
+  <div  id="header_area" class="container-fluid px-5 <?php echo get_theme_mod('mh_menu_position'); ?>">
     <div class="row">
          <div class="col-md-3">
             <a href=""> <img src="<?php echo get_theme_mod('mh_logo');?>"  alt="logo" class="logos"></a>

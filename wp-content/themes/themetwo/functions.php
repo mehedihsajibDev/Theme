@@ -44,6 +44,55 @@ function mh_customize_register($wp_customize){
         'section'=> 'mh_header_area'
        
     )));
+
+
+   $wp_customize->add_section('mh_menu_option', array(
+        'title'=>__('Menu Position Option', 'mhsajib'),
+        'description'=>'If you interested to change your menu position you can do it.'
+   ));
+   $wp_customize->add_setting('mh_menu_position', array(
+        'default'=> 'right_menu',
+   ));
+   $wp_customize->add_control('mh_menu_position', array(
+        'label'=>'Menu Position',
+        'description'=>'Select your menu position',
+        'setting'=>'mh_menu_position',
+        'section'=>'mh_menu_option',
+        'type' => 'radio',
+        'choices'=>array(
+        'left_menu'=>'Left Menu',
+        'right_menu'=>'Right Menu',
+        'center_menu'=>'Center Menu',
+        ),
+   ));
+
+
+
+
+  // Menu Position Option
+//   $wp_customize->add_section('ali_menu_option', array(
+//     'title' => __('Menu Position Option', 'alihossain'),
+//     'description' => 'If you interested to change your menu position you can do it.'
+//   ));
+
+//   $wp_customize->add_setting('ali_menu_position', array(
+//     'default' => 'right_menu',
+//   ));
+
+//   $wp_customize-> add_control('ali_menu_position', array(
+//     'label' => 'Menu Position',
+//     'description' => 'Select your menu position',
+//     'setting' => 'ali_menu_position',
+//     'section' => 'ali_menu_option',
+//     'type' => 'radio',
+//     'choices' => array(
+//       'left_menu' => 'Left Menu',
+//       'right_menu' => 'Right Menu',
+//       'center_menu' => 'Center Menu',
+//     ),
+//   ));
+
+
 }
 add_action('customize_register', 'mh_customize_register');
 
